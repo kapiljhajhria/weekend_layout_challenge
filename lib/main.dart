@@ -119,35 +119,43 @@ class _RegisterPageState extends State<RegisterPage> {
                                 curve: Curves.linear);
 //                        setState(() {});
                           },
-                          child: Card(
-                            color: Color.fromRGBO(96, 85, 165, 1.0),
-                            margin: EdgeInsets.all(5),
-                            elevation: 10.0,
-//                      width: MediaQuery.of(context).size.width * 0.85,
-                            child: Container(
-                              width: MediaQuery.of(context).size.width * 0.85,
-                              child: Center(
-                                  child: RichText(
-                                textAlign: TextAlign.center,
-                                text: TextSpan(
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                  ),
-                                  children: <TextSpan>[
-                                    TextSpan(
-                                        text: 'Try it free 7 days ',
-                                        style: TextStyle(
-                                            fontSize: 16,
-                                            fontWeight: FontWeight.w700)),
-                                    TextSpan(
-                                        text: "then \n \$20/mo. thereafter",
-                                        style: TextStyle(
-                                            fontSize: 14,
-                                            fontWeight: FontWeight.w400)),
-                                  ],
-                                ),
-                              )),
+                          child: Container(
+                            decoration: BoxDecoration(
+                              borderRadius:
+                              BorderRadius.all(Radius.circular(10)),
+                              color: Color.fromRGBO(96, 85, 165, 1.0),
+                              boxShadow: [
+                                BoxShadow(
+                                    color: Colors.black12,
+                                    offset: Offset(0, 6.0),
+                                    spreadRadius: 0.0)
+                              ],
                             ),
+                            width: MediaQuery
+                                .of(context)
+                                .size
+                                .width * 0.85,
+                            child: Center(
+                                child: RichText(
+                                  textAlign: TextAlign.center,
+                                  text: TextSpan(
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                    ),
+                                    children: <TextSpan>[
+                                      TextSpan(
+                                          text: 'Try it free 7 days ',
+                                          style: TextStyle(
+                                              fontSize: 16,
+                                              fontWeight: FontWeight.w700)),
+                                      TextSpan(
+                                          text: "then \n \$20/mo. thereafter",
+                                          style: TextStyle(
+                                              fontSize: 14,
+                                              fontWeight: FontWeight.w400)),
+                                    ],
+                                  ),
+                                )),
                           ),
                         ),
                       ),
@@ -183,24 +191,35 @@ class _RegisterPageState extends State<RegisterPage> {
                                   curve: Curves.linear);
                               setState(() {});
                             },
-                            child: Card(
-                              color: Color.fromRGBO(56, 204, 140, 1.0),
-                              margin: EdgeInsets.all(5),
-                              elevation: 10.0,
-                              child: Container(
-                                margin: EdgeInsets.fromLTRB(20, 0, 20, 0),
-                                height:
-                                    MediaQuery.of(context).size.height * 0.1,
-                                width: MediaQuery.of(context).size.width * 0.65,
-                                child: Center(
-                                  child: Text(
-                                    "CLAIM YOUR FREE TRIAL",
-                                    style: TextStyle(
-                                        fontSize: 19,
-                                        color: Colors.white,
-                                        fontWeight: FontWeight.w600,
-                                        wordSpacing: 2),
-                                  ),
+                            child: Container(
+                              decoration: BoxDecoration(
+                                borderRadius:
+                                BorderRadius.all(Radius.circular(7)),
+                                color: Color.fromRGBO(56, 204, 140, 1.0),
+                                boxShadow: [
+                                  BoxShadow(
+                                      color: Colors.green,
+                                      offset: Offset(0, 4.0),
+                                      spreadRadius: 0.0)
+                                ],
+                              ),
+                              margin: EdgeInsets.fromLTRB(0, 0, 0, 0),
+                              height: MediaQuery
+                                  .of(context)
+                                  .size
+                                  .height * 0.09,
+                              width: MediaQuery
+                                  .of(context)
+                                  .size
+                                  .width * 0.75,
+                              child: Center(
+                                child: Text(
+                                  "CLAIM YOUR FREE TRIAL",
+                                  style: TextStyle(
+                                      fontSize: 19,
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.w600,
+                                      wordSpacing: 2),
                                 ),
                               ),
                             ),
