@@ -57,212 +57,102 @@ class _RegisterPageState extends State<RegisterPage> {
                   Color.fromRGBO(255, 122, 122, 1.0), BlendMode.color),
               child: Container(
                 width: double.infinity,
-                height: MediaQuery.of(context).size.height * 2,
+                height: MediaQuery.of(context).size.height,
                 child: Image.asset(
                   "assets/bg-intro-mobile.png",
                   fit: BoxFit.cover,
                 ),
               ),
             ),
-            Column(
-              children: <Widget>[
-                Container(
-//                color: Colors.red,
-                  width: MediaQuery.of(context).size.width,
-                  height: MediaQuery.of(context).size.height,
-                  padding: EdgeInsets.fromLTRB(
-                      0,
-                      MediaQuery.of(context).size.height * .04,
-                      0,
-                      MediaQuery.of(context).size.height * .02),
-                  child: Column(
-                    children: <Widget>[
-                      Expanded(
-                          flex: 6,
-                          child: Container(
-                            width: MediaQuery.of(context).size.width * 0.85,
-                            child: Center(
-                              child: Column(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceEvenly,
-                                children: <Widget>[
-                                  Text(
-                                    "Learn to code by watching others",
-                                    style: TextStyle(
-                                        fontSize: 32,
-                                        color: Colors.white,
-                                        fontWeight: FontWeight.w700),
-                                    textAlign: TextAlign.center,
-                                  ),
-                                  Text(
-                                    "See how experienced developers solve problems in real-time. Watching scripted tutorials is great, but understanding how developers think is invaluable.",
-                                    style: TextStyle(
-                                        wordSpacing: 4,
-                                        height: 2,
-                                        fontSize: 16,
-                                        color: Colors.white,
-                                        fontWeight: FontWeight.w600),
-                                    textAlign: TextAlign.center,
-                                    textScaleFactor: 1.0,
-                                  )
-                                ],
-                              ),
-                            ),
-                          )),
-                      Expanded(
-                        flex: 1,
-                        child: GestureDetector(
-                          onTap: () {
-                            myScrollController.animateTo(
-                                MediaQuery.of(context).size.height,
-                                duration: Duration(milliseconds: 500),
-                                curve: Curves.linear);
-//                        setState(() {});
-                          },
-                          child: Container(
-                            decoration: BoxDecoration(
-                              borderRadius:
-                              BorderRadius.all(Radius.circular(10)),
-                              color: Color.fromRGBO(96, 85, 165, 1.0),
-                              boxShadow: [
-                                BoxShadow(
-                                    color: Colors.black12,
-                                    offset: Offset(0, 6.0),
-                                    spreadRadius: 0.0)
-                              ],
-                            ),
-                            width: MediaQuery
-                                .of(context)
-                                .size
-                                .width * 0.85,
-                            child: Center(
-                                child: RichText(
-                                  textAlign: TextAlign.center,
-                                  text: TextSpan(
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                    ),
-                                    children: <TextSpan>[
-                                      TextSpan(
-                                          text: 'Try it free 7 days ',
-                                          style: TextStyle(
-                                              fontSize: 16,
-                                              fontWeight: FontWeight.w700)),
-                                      TextSpan(
-                                          text: "then \n \$20/mo. thereafter",
-                                          style: TextStyle(
-                                              fontSize: 14,
-                                              fontWeight: FontWeight.w400)),
-                                    ],
-                                  ),
-                                )),
+            Container(
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.all(Radius.circular(10))),
+                margin: EdgeInsets.fromLTRB(
+                    MediaQuery.of(context).size.width * .08,
+                    MediaQuery.of(context).size.height * .04,
+                    MediaQuery.of(context).size.width * .08,
+                    0),
+                child: Column(
+                  children: <Widget>[
+                    formInputTextBox("First Name"),
+                    formInputTextBox("Last Name"),
+                    formInputTextBox("Email Address"),
+                    formInputTextBox("Password"),
+                    GestureDetector(
+                      onTap: () {
+                        myScrollController.animateTo(
+                            -MediaQuery.of(context).size.height,
+                            duration: Duration(milliseconds: 500),
+                            curve: Curves.linear);
+                        setState(() {});
+                      },
+                      child: Container(
+                        decoration: BoxDecoration(
+                          borderRadius:
+                          BorderRadius.all(Radius.circular(7)),
+                          color: Color.fromRGBO(56, 204, 140, 1.0),
+                          boxShadow: [
+                            BoxShadow(
+                                color: Colors.green,
+                                offset: Offset(0, 4.0),
+                                spreadRadius: 0.0)
+                          ],
+                        ),
+                        margin: EdgeInsets.fromLTRB(0, 0, 0, 0),
+                        height: MediaQuery
+                            .of(context)
+                            .size
+                            .height * 0.09,
+                        width: MediaQuery
+                            .of(context)
+                            .size
+                            .width * 0.75,
+                        child: Center(
+                          child: Text(
+                            "CLAIM YOUR FREE TRIAL",
+                            style: TextStyle(
+                                fontSize: 19,
+                                color: Colors.white,
+                                fontWeight: FontWeight.w600,
+                                wordSpacing: 2),
                           ),
                         ),
                       ),
-                    ],
-                  ),
-                ),
-                Container(
-                  padding: EdgeInsets.fromLTRB(
-                      0,
-                      MediaQuery.of(context).size.height * .04,
-                      0,
-                      MediaQuery.of(context).size.height * .1),
-                  child: Container(
-                      decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.all(Radius.circular(10))),
-                      margin: EdgeInsets.fromLTRB(
-                          MediaQuery.of(context).size.width * .08,
-                          MediaQuery.of(context).size.height * .04,
-                          MediaQuery.of(context).size.width * .08,
-                          0),
-                      child: Column(
-                        children: <Widget>[
-                          formInputTextBox("First Name"),
-                          formInputTextBox("Last Name"),
-                          formInputTextBox("Email Address"),
-                          formInputTextBox("Password"),
-                          GestureDetector(
-                            onTap: () {
-                              myScrollController.animateTo(
-                                  -MediaQuery.of(context).size.height,
-                                  duration: Duration(milliseconds: 500),
-                                  curve: Curves.linear);
-                              setState(() {});
-                            },
-                            child: Container(
-                              decoration: BoxDecoration(
-                                borderRadius:
-                                BorderRadius.all(Radius.circular(7)),
-                                color: Color.fromRGBO(56, 204, 140, 1.0),
-                                boxShadow: [
-                                  BoxShadow(
-                                      color: Colors.green,
-                                      offset: Offset(0, 4.0),
-                                      spreadRadius: 0.0)
-                                ],
+                    ),
+                    Expanded(
+                      flex: 1,
+                      child: Container(
+                          width: MediaQuery.of(context).size.width * 0.60,
+                          margin: EdgeInsets.only(top: 10),
+                          alignment: Alignment(1, -0.4),
+                          child: RichText(
+                            textAlign: TextAlign.center,
+                            text: TextSpan(
+                              style: TextStyle(
+                                color: Colors.white,
                               ),
-                              margin: EdgeInsets.fromLTRB(0, 0, 0, 0),
-                              height: MediaQuery
-                                  .of(context)
-                                  .size
-                                  .height * 0.09,
-                              width: MediaQuery
-                                  .of(context)
-                                  .size
-                                  .width * 0.75,
-                              child: Center(
-                                child: Text(
-                                  "CLAIM YOUR FREE TRIAL",
-                                  style: TextStyle(
-                                      fontSize: 19,
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.w600,
-                                      wordSpacing: 2),
-                                ),
-                              ),
-                            ),
-                          ),
-                          Expanded(
-                            flex: 1,
-                            child: Container(
-                                width: MediaQuery.of(context).size.width * 0.60,
-                                margin: EdgeInsets.only(top: 10),
-                                alignment: Alignment(1, -0.4),
-                                child: RichText(
-                                  textAlign: TextAlign.center,
-                                  text: TextSpan(
+                              children: <TextSpan>[
+                                TextSpan(
+                                    text:
+                                    'By clicking the button, you are agreeing to our  ',
                                     style: TextStyle(
-                                      color: Colors.white,
-                                    ),
-                                    children: <TextSpan>[
-                                      TextSpan(
-                                          text:
-                                              'By clicking the button, you are agreeing to our  ',
-                                          style: TextStyle(
-                                              fontSize: 14,
-                                              color: Color.fromRGBO(
-                                                  185, 182, 211, 1.0),
-                                              fontWeight: FontWeight.w400)),
-                                      TextSpan(
-                                          text: "Terms and Services",
-                                          style: TextStyle(
-                                              fontSize: 14,
-                                              color: Colors.red,
-                                              fontWeight: FontWeight.w600)),
-                                    ],
-                                  ),
-                                )),
-                          ),
-                        ],
-                      )),
-//                  color: Color.fromRGBO(56, 204, 140, 1.0),
-                  width: MediaQuery.of(context).size.width,
-                  height: MediaQuery.of(context).size.height,
-                ),
-              ],
-            ),
+                                        fontSize: 14,
+                                        color: Color.fromRGBO(
+                                            185, 182, 211, 1.0),
+                                        fontWeight: FontWeight.w400)),
+                                TextSpan(
+                                    text: "Terms and Services",
+                                    style: TextStyle(
+                                        fontSize: 14,
+                                        color: Colors.red,
+                                        fontWeight: FontWeight.w600)),
+                              ],
+                            ),
+                          )),
+                    ),
+                  ],
+                )),
           ],
         ),
       ),
